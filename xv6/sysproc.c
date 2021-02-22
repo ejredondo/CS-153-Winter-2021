@@ -43,6 +43,13 @@ int sys_waitpid(void) {
    return waitpid(pid, status, option);
 }
 
+int sys_setpriority(void) {
+   int prior;
+   argint(0, &prior);
+   setpriority(prior);
+   return 0;
+}
+
 int
 sys_kill(void)
 {
